@@ -1,0 +1,280 @@
+.flex {
+    display: flex;
+
+    &--align-center {
+        align-items: center;
+    }
+
+    &--align-baseline {
+        align-items: baseline;
+    }
+
+    &--justify-between {
+        justify-content: space-between;
+    }
+
+    &--justify-center {
+        justify-content: center;
+    }
+
+    &--column {
+        flex-direction: column;
+    }
+
+    &--wrap {
+        flex-wrap: wrap;
+    }
+}
+
+.p {
+    &t {
+        &--5 {
+            padding-top: 5px;
+        }
+
+        &--10 {
+            padding-top: 10px;
+        }
+
+        &--15 {
+            padding-top: 15px;
+        }
+
+        &--20 {
+            padding-top: 20px;
+        }
+
+        &--25 {
+            padding-top: 25px;
+        }
+
+        &--30 {
+            padding-top: 30px;
+        }
+    }
+
+    &b {
+        &--10 {
+            padding-bottom: 10px;
+        }
+
+        &--15 {
+            padding-bottom: 15px;
+        }
+
+        &--20 {
+            padding-bottom: 20px;
+        }
+
+        &--25 {
+            padding-bottom: 25px;
+        }
+
+        &--30 {
+            padding-bottom: 30px;
+        }
+    }
+
+    &l {
+        &--10 {
+            padding-left: 10px;
+        }
+
+        &--15 {
+            padding-left: 15px;
+        }
+
+        &--25 {
+            padding-left: 25px;
+        }
+
+        &--30 {
+            padding-left: 30px;
+        }
+    }
+
+    &r {
+        &--10 {
+            padding-right: 10px;
+        }
+
+        &--15 {
+            padding-right: 15px;
+        }
+
+        &--25 {
+            padding-right: 25px;
+        }
+
+        &--30 {
+            padding-right: 30px;
+        }
+    }
+}
+
+.m {
+    &--auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &b {
+        &--10 {
+            margin-bottom: 10px;
+        }
+
+        &--15 {
+            margin-bottom: 15px;
+        }
+
+        &--20 {
+            margin-bottom: 20px;
+        }
+
+        &--25 {
+            margin-bottom: 25px;
+        }
+
+        &--30 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.font {
+    &--thin {
+        font-weight: 200;
+    }
+
+    &--normal {
+        font-weight: 400;
+    }
+
+    &--medium {
+        font-weight: 500;
+    }
+
+    &--size {
+        &-11 {
+            @include font(11);
+        }
+
+        &-12 {
+            @include font(12);
+        }
+
+        &-14 {
+            @include font(14);
+        }
+
+        &-16 {
+            @include font(16);
+        }
+
+        &-20 {
+            @include font(20);
+        }
+
+        &-24 {
+            @include font(24);
+        }
+
+        &-30 {
+            @include font(30);
+        }
+
+        &-32 {
+            @include font(32);
+        }
+
+        &-40 {
+            @include font(40);
+        }
+
+        &-50 {
+            @include font(50);
+        }
+    }
+}
+
+.text {
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.color {
+    &--white {
+        color: var(--color--white);
+    }
+
+    &--green {
+        color: var(--color--green);
+    }
+
+    &--orange {
+        color: var(--color--orange);
+    }
+
+    &--yellow {
+        color: var(--color--yellow);
+    }
+
+    &--sky-blue {
+        color: var(--color--sky-blue);
+    }
+
+    &--blue {
+        color: var(--color--blue);
+    }
+
+    &--purple {
+        color: var(--color--purple);
+    }
+
+    &--aqua {
+        color: var(--color--aqua);
+    }
+
+    &--teal {
+        color: var(--color--teal);
+    }
+
+    &--red {
+        color: var(--color--red);
+    }
+
+    &--emerald {
+        color: var(--color--emerald);
+    }
+
+    &--moss {
+        color: var(--color--moss);
+    }
+
+    &--text {
+        color: var(--color--text);
+    }
+
+    &--muted {
+        color: var(--color--muted);
+    }
+}
+
+.position {
+    &--relative {
+        position: relative;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--fixed {
+        position: fixed;
+    }
+}

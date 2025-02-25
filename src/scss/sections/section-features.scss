@@ -1,0 +1,280 @@
+.section__features {
+    &-container {
+        gap: 15px 15px;
+
+        .section__features-card {
+            &:nth-of-type(1) {
+                &:hover {
+                    border: 1px solid rgba(255, 122, 48, .4);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(255, 122, 48, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(255, 122, 48, .4);
+                    }
+                }
+            }
+
+            &:nth-of-type(2) {
+                &:hover {
+                    border: 1px solid rgba(252, 181, 46, .4);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(252, 181, 46, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(252, 181, 46, .4);
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+                &:hover {
+                    border: 1px solid rgba(21, 176, 230, .5);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(21, 176, 230, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(21, 176, 230, .5);
+                    }
+                }
+            }
+
+            &:nth-of-type(4) {
+                &:hover {
+                    border: 1px solid rgba(185, 49, 233, .5);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(185, 49, 233, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(185, 49, 233, .5);
+                    }
+                }
+            }
+
+            &:nth-of-type(5) {
+                &:hover {
+                    border: 1px solid rgba(10, 138, 130, .5);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(10, 138, 130, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(10, 138, 130, .5);
+                    }
+                }
+            }
+
+            &:nth-of-type(6) {
+                &:hover {
+                    border: 1px solid rgba(40, 126, 254, .5);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(40, 126, 254, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(40, 126, 254, .5);
+                    }
+                }
+            }
+
+            &:nth-of-type(7) {
+                &:hover {
+                    border: 1px solid rgba(236, 67, 67, .4);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(236, 67, 67, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(236, 67, 67, .4);
+                    }
+                }
+            }
+
+            &:nth-of-type(8) {
+                &:hover {
+                    border: 1px solid rgba(37, 118, 58, .6);
+
+                    .section__features-image {
+                        &:before {
+                            background-color: rgba(37, 118, 58, .8);
+                        }
+                    }
+                }
+
+                .section__features-image {
+                    &:before {
+                        background-color: rgba(37, 118, 58, .6);
+                    }
+                }
+            }
+        }
+    }
+
+    &-card {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, .1);
+        background-color: #151515;
+        overflow: hidden;
+        flex: 1 1 calc(50% - 7.5px);
+        max-width: 208px;
+        transition: border .4s ease;
+    }
+
+    &-image {
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 40px;
+            filter: blur(50px);
+            transition: all .4s;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    &-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        color: rgba(255, 255, 255, 0.25);
+        text-overflow: ellipsis;
+        line-height: 1rem;
+    }
+
+    &-subtitle {
+        color: rgba(255, 255, 255, 0.25);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+        max-width: 275px;
+    }
+
+    &-item {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, .1);
+        overflow: hidden;
+        height: 360px;
+        background-color: var(--color--surface-dark);
+
+        &:nth-of-type(1) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_members.svg);
+        }
+
+        &:nth-of-type(1) .section__features-item-text {
+            max-width: 255px;
+        }
+
+        &:nth-of-type(2) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_classes.svg);
+        }
+
+        &:nth-of-type(3) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_schedule.svg);
+        }
+
+        &:nth-of-type(4) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_attendance.svg);
+        }
+
+        &:nth-of-type(4) .section__features-item-text {
+            max-width: 285px;
+        }
+
+        &:nth-of-type(5) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_packages.svg);
+        }
+
+        &:nth-of-type(5) .section__features-item-text {
+            max-width: 295px;
+        }
+
+        &:nth-of-type(6) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_finance.svg);
+        }
+
+        &:nth-of-type(7) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_marketplace.svg);
+        }
+
+        &:nth-of-type(7) .section__features-item-text {
+            max-width: 260px;
+        }
+
+        &:nth-of-type(8) .section__features-item-head {
+            background-image: url(../img/sections/section-features/gradient_texter.svg);
+        }
+
+        &-head {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent, #090909b5);
+            }
+        }
+
+        &-icon {
+            filter: drop-shadow(0 0 10px rgba(185, 49, 233, .4));
+            margin-left: -10px;
+        }
+
+        &-media {
+            width: 100%;
+            height: auto;
+        }
+
+        &-wrapper {
+            z-index: 1;
+        }
+    }
+}
