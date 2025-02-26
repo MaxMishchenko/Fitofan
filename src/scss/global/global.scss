@@ -84,6 +84,16 @@ body {
     width: 100%;
 }
 
+video {
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+
+video {
+    &.visible {
+        opacity: 1;
+    }
+}
 
 
 

@@ -24,6 +24,10 @@
     &--wrap {
         flex-wrap: wrap;
     }
+
+    &--no-shrink {
+        flex-shrink: 0;
+    }
 }
 
 .p {
@@ -187,6 +191,10 @@
             @include font(32);
         }
 
+        &-36 {
+            @include font(36);
+        }
+
         &-40 {
             @include font(40);
         }
@@ -262,6 +270,10 @@
 
     &--muted {
         color: var(--color--muted);
+    }
+
+    &--light-gray {
+        color: var(--color--light-gray);
     }
 }
 

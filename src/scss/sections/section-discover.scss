@@ -1,0 +1,35 @@
+.section__discover {
+    min-height: 425px;
+
+    &-video {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+
+        &-wrapper {
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -15px;
+                right: -15px;
+                bottom: 0;
+                background: linear-gradient(180deg, rgba(9, 9, 9, 0.00) 0%, #090909 84.84%);
+                z-index: 0;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &-product {
+        left: 0;
+        bottom: -80px;
+        right: 0;
+        z-index: 1;
+    }
+
+    &-container {
+        width: 100%;
+        max-width: 154px;
+        gap: 8px;
+    }
+}
