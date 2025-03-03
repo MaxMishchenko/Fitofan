@@ -2,4 +2,39 @@
     font-size: #{$size / 16}rem;
 }
 
+@mixin media-query($media-query) {
+    $breakpoint-found: false;
+
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration {
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration} {
+                @content;
+            }
+        }
+    }
+
+    @if $breakpoint-found == false {
+        @warn 'Breakpoint "#{$media-query}" does not exist';
+    }
+}
+
+$grid-tablet: 768px;
+$grid-laptop: 1024px;
+$grid-desktop: 1440px;
+
+$tablet: 'tablet';
+$laptop: 'laptop';
+$desktop: 'desktop';
+
+$breakpoints: (
+        $tablet '(min-width: #{$grid-tablet})',
+        $laptop '(min-width: #{$grid-laptop})',
+        $desktop '(min-width: #{$grid-desktop})'
+);
+
 $font_primary: 'Roboto', sans-serif;

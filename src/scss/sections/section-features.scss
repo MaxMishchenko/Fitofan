@@ -155,7 +155,6 @@
         background-color: #151515;
         overflow: hidden;
         flex: 1 1 calc(50% - 7.5px);
-        max-width: 208px;
         transition: border .4s ease;
     }
 
@@ -193,8 +192,13 @@
         border-radius: 16px;
         border: 1px solid rgba(255, 255, 255, .1);
         overflow: hidden;
-        height: 360px;
+        height: 92.2vw;
+        max-height: 560px;
         background-color: var(--color--surface-dark);
+
+        @media (min-width: 426px) {
+            height: auto;
+        }
 
         &:nth-of-type(1) .section__features-item-head {
             background-image: url(../img/sections/section-features/gradient_members.svg);
@@ -270,7 +274,6 @@
 
         &-media {
             width: 100%;
-            height: auto;
         }
 
         &-wrapper {

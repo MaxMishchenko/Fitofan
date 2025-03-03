@@ -22,7 +22,7 @@
 
     <title>Fitofan - Club Management</title>
 </head>
-<body>
+<body id="body">
     @include('partials/header/header.html')
 
     @include('partials/mobile-menu/mobile-menu.html')
@@ -37,9 +37,13 @@
 
     @include('partials/sections/section-discover.html')
 
-    <hr class="divider">
-
     @include('partials/footer/footer.html')
+
+    @include('partials/popups/popup-to-top.html')
+
+    <!--@include('partials/popups/popup-chat.html')-->
+
+    @include('partials/popups/popup-lets-chat.html')
 <script src="./js/jquery.js"></script>
 <script src="./js/main.js"></script>
 </body>

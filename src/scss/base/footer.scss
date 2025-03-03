@@ -1,0 +1,21 @@
+.footer {
+    padding-bottom: 60px;
+
+    &__nav {
+        &-link {
+            transition: .4s;
+
+            &:hover {
+                color: var(--color--light-gray);
+            }
+
+            &-info {
+                transition: .4s;
+
+                &:hover {
+                    color: var(--color--white);
+                }
+            }
+        }
+    }
+}

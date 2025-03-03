@@ -20,6 +20,32 @@
 
     &-chat {
         background-color: transparent;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: url(../img/icons/icon_chat_hover.svg) no-repeat center / cover;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        &:hover {
+            .mobile__menu-chat-icon {
+                opacity: 0;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &-icon {
+            margin-right: 8px;
+        }
     }
 
     &-nav {
@@ -36,7 +62,7 @@
             bottom: -35px;
             left: 15px;
             right: 15px;
-            width: 100%;
+            width: calc(100% - 30px);
             height: 2px;
             display: block;
             background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 35.89%);
