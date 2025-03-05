@@ -1,21 +1,16 @@
-<svg width="390" height="899" viewBox="0 0 390 899" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_7303_15502)">
-        <g filter="url(#filter0_f_7303_15502)">
-            <path d="M367.746 480.261C309.703 538.422 185.497 508.575 90.325 413.595C-4.84735 318.616 -34.9464 194.471 23.0968 136.31C81.14 78.1489 205.346 107.996 300.518 202.976C395.69 297.955 425.789 422.1 367.746 480.261ZM65.3508 178.478C21.5398 222.378 44.2586 316.083 116.095 387.773C187.931 459.464 281.681 481.993 325.492 438.093C369.303 394.193 346.584 300.488 274.748 228.798C202.912 157.107 109.162 134.578 65.3508 178.478Z" fill="url(#paint0_linear_7303_15502)" fill-opacity="0.4"/>
-        </g>
+<svg width="390" height="630" viewBox="0 0 390 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_f_7303_15503)">
+        <path d="M367.746 480.261C309.703 538.422 185.497 508.575 90.325 413.595C-4.84735 318.616 -34.9464 194.471 23.0968 136.31C81.14 78.1489 205.346 107.996 300.518 202.976C395.69 297.955 425.789 422.1 367.746 480.261ZM65.3508 178.478C21.5398 222.378 44.2586 316.083 116.095 387.773C187.931 459.464 281.681 481.993 325.492 438.093C369.303 394.193 346.584 300.488 274.748 228.798C202.912 157.107 109.162 134.578 65.3508 178.478Z" fill="url(#paint0_linear_7303_15503)" fill-opacity="0.4"/>
     </g>
     <defs>
-        <filter id="filter0_f_7303_15502" x="-126.452" y="-13.4009" width="643.747" height="643.373" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter0_f_7303_15503" x="-126.452" y="-13.4009" width="643.747" height="643.373" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_7303_15502"/>
+            <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_7303_15503"/>
         </filter>
-        <linearGradient id="paint0_linear_7303_15502" x1="23.0968" y1="136.31" x2="367.746" y2="480.261" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linear_7303_15503" x1="23.0968" y1="136.31" x2="367.746" y2="480.261" gradientUnits="userSpaceOnUse">
             <stop stop-color="#C23E26"/>
             <stop offset="1" stop-color="#03AF8F"/>
         </linearGradient>
-        <clipPath id="clip0_7303_15502">
-            <rect width="390" height="899" fill="white"/>
-        </clipPath>
     </defs>
 </svg>
