@@ -5,6 +5,10 @@
         align-items: center;
     }
 
+    &--align-normal {
+        align-items: normal;
+    }
+
     &--align-baseline {
         align-items: baseline;
     }
@@ -128,6 +132,17 @@
 
     &l {
         &--10 {
+            margin-left: 10px;
+        }
+    }
+
+    &r {
+        &--10 {
+            margin-right: 10px;
+        }
+
+        &--30 {
+            margin-right: 30px;
         }
     }
 
@@ -192,6 +207,10 @@
             @include font(24);
         }
 
+        &-28 {
+            @include font(28);
+        }
+
         &-30 {
             @include font(30);
         }
@@ -210,6 +229,14 @@
 
         &-50 {
             @include font(50);
+        }
+
+        &-55 {
+            @include font(55);
+        }
+
+        &-70 {
+            @include font(70);
         }
     }
 }

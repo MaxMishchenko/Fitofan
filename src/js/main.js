@@ -32,25 +32,42 @@ $(document).ready(function () {
         return false;
     });
 
-    /*** Scroll to top **/
-    $('#scroll-top').on('click', function(e) {
+    /** Scroll to top **/
+    $('#scroll-top').on('click', function (e) {
         e.preventDefault();
 
-        $('html, body').animate({ scrollTop: 0 }, 700);
+        $('html, body').animate({scrollTop: 0}, 700);
     });
 
+    /**Header app button **/
+    $('#header-app-btn').click(function (e) {
+        e.stopPropagation();
+
+        $(this).toggleClass('active');
+        $('.header__menu-btn-container').toggleClass('active');
+        $('.header__menu-btn-img').toggleClass('active');
+    });
+    
+    $(document).click(function (e) {
+        if (!$('#header-app-btn').is(e.target) && $('#header-app-btn').has(e.target).length === 0 &&
+            !$('.header__menu-btn-container').is(e.target) && $('.header__menu-btn-container').has(e.target).length === 0) {
+            $('#header-app-btn').removeClass('active');
+            $('.header__menu-btn-container').removeClass('active');
+            $('.header__menu-btn-img').removeClass('active');
+        }
+    });
 
     /** Lazy Video **/
     var lazyVideos = $('video.lazy');
 
     if ('IntersectionObserver' in window) {
-        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
+        var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
                 var video = $(entry.target);
 
                 if (entry.isIntersecting) {
                     if (!video.hasClass('loaded')) {
-                        video.children('source').each(function() {
+                        video.children('source').each(function () {
                             var videoSource = $(this);
                             videoSource.attr('src', videoSource.data('src'));
                         });
@@ -61,7 +78,8 @@ $(document).ready(function () {
                     }
 
                     if (video[0].readyState >= 3 && video[0].paused) {
-                        video[0].play().catch(function() {});
+                        video[0].play().catch(function () {
+                        });
                     }
 
                 } else {
@@ -72,7 +90,7 @@ $(document).ready(function () {
             threshold: 0.7
         });
 
-        lazyVideos.each(function() {
+        lazyVideos.each(function () {
             lazyVideoObserver.observe(this);
         });
     }

@@ -13,20 +13,48 @@
     <nav class="header__menu">
         <ul class="flex flex--align-center">
             <li class="header__menu-list-item flex pt--5 pb--5 pl--10 pr--10 mr--10">
-                <a href="#" class="header__menu-link font--size-14 font--medium color--light-gray">Explore</a>
+                <a href="#explore" class="header__menu-link font--size-14 font--medium color--light-gray">Explore</a>
             </li>
 
             <li class="header__menu-list-item flex pt--5 pb--5 pl--10 pr--10 ml--10 mr--10">
-                <a href="#" class="header__menu-link font--size-14 font--medium color--light-gray">Features</a>
+                <a href="#features" class="header__menu-link font--size-14 font--medium color--light-gray">Features</a>
             </li>
 
             <li class="header__menu-list-item flex pt--5 pb--5 pl--10 pr--10 ml--10 mr--10">
-                <a href="#" class="header__menu-link font--size-14 font--medium color--light-gray">Pricing</a>
+                <a href="#pricing" class="header__menu-link font--size-14 font--medium color--light-gray">Pricing</a>
             </li>
 
             <li class="header__menu-list-item flex pt--5 pb--5 pl--10 pr--10 ml--10">
-                <a href="#" class="header__menu-link font--size-14 font--medium color--light-gray">Try Demo</a>
+                <a href="#demo" class="header__menu-link font--size-14 font--medium color--light-gray">Try Demo</a>
             </li>
         </ul>
     </nav>
+
+    <div class="header__menu flex flex--align-center">
+        <div id="header-app-btn" class="header__menu-btn transparent flex flex--align-center position--relative mr--30">
+            <span class="font--size-14 font--medium color--light-gray mr--10">Fitofan App</span>
+
+            <img loading="lazy" class="header__menu-btn-img" height="18" width="18" src="./img/icons/icon_chevron_down.svg" alt="Chevron icon">
+
+            <ul class="header__menu-btn-container position--absolute position--relative pt--15 pb--15 pl--15 pr--15">
+                <li class="mb--15">
+                    <a href="https://apps.apple.com/ca/app/fitofan/id6475638965" target="_blank" rel="nofollow noopener">
+                        <img loading="lazy" width="120" height="41" src="./img/footer/image_appstore.svg" alt="Download on the AppStore">
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://play.google.com/store/apps/details?id=com.fitofan.mobile" target="_blank" rel="nofollow noopener">
+                        <img loading="lazy" width="120" height="41" src="./img/footer/image_googleplay.svg" alt="Get it on GooglePlay">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <button class="transparent flex flex--align-normal">
+            <img loading="lazy" width="24" height="24" class="mr--10" src="./img/icons/icon_header_chat.svg" alt="Icon chat">
+
+            <span class="color--green font--medium font--size-16">Chat</span>
+        </button>
+    </div>
 </header>

@@ -32,9 +32,9 @@ $laptop: 'laptop';
 $desktop: 'desktop';
 
 $breakpoints: (
-        $tablet '(min-width: #{$grid-tablet})',
-        $laptop '(min-width: #{$grid-laptop})',
-        $desktop '(min-width: #{$grid-desktop})'
+        $tablet '(max-width: #{$grid-tablet -1})',
+        $laptop '(max-width: #{$grid-laptop - 1})',
+        $desktop '(max-width: #{$grid-desktop})'
 );
 
 $font_primary: 'Roboto', sans-serif;

@@ -6,14 +6,15 @@
     z-index: 999;
     pointer-events: all;
 
-    @include media-query($laptop) {
+    @media (min-width: 1024px) {
         padding-left: 80px;
-        padding-right: 80px;
+        padding-right: 85px;
+        justify-content: space-between;
     }
 
     &.float {
         background: rgba(255, 255, 255, .02);
-        backdrop-filter: blur(50px);
+        backdrop-filter: blur(150px);
 
         &:after {
             content: '';
@@ -33,7 +34,7 @@
         width: 40px;
         background-color: transparent;
 
-        @include media-query($laptop) {
+        @media (min-width: 1024px) {
             display: none;
         }
 
@@ -62,26 +63,70 @@
     &__menu {
         display: none;
 
-        @include media-query($laptop) {
+        @media (min-width: 1024px) {
             display: flex;
         }
 
         &-list {
             &-item {
                 transition: .4s;
+                border-radius: 4px;
+                cursor: pointer;
 
                 &:hover {
-                    background-color: #4543436b;
-                    border-radius: 4px;
+                    background-color: #ffffff14;
+
+                    .header__menu-link {
+                        color: var(--color--text);
+                    }
                 }
             }
         }
 
         &-link {
             transition: .4s;
+        }
 
-            &:hover {
-                color: var(--color--text);
+        &-btn {
+            transition: all .4s ease-in-out;
+            cursor: pointer;
+            padding: 10px 12px 10px 16px;
+            border-radius: 8px;
+
+            &:hover,
+            &.active {
+                background-color: #ffffff14;
+
+                span {
+                    color: var(--color--text);
+                }
+            }
+
+            &-img {
+                transition: transform .4s;
+
+                &.active {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &-container {
+                left: -22px;
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                background: rgba(255, 255, 255, 0.02);
+                backdrop-filter: blur(50px);
+                top: 40px;
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .4s ease-in-out;
+
+                &.active {
+                    visibility: visible;
+                    pointer-events: all;
+                    opacity: 1;
+                }
             }
         }
     }

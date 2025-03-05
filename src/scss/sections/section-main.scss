@@ -1,0 +1,195 @@
+.section__main {
+    max-height: 820px;
+
+    @media (max-width: 767px) {
+        min-height: 710px;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &:before {
+        top: -30px;
+        box-shadow: 0 10px 50px 32px #090909ff;
+        height: 30px;
+    }
+
+    &:after {
+        bottom: -30px;
+        box-shadow: 0 -120px 16px 16px #090909;
+        height: 120px;
+        transform: translateY(110px);
+
+        @media (max-width: 767px) {
+            transform: translateY(-130px);
+        }
+    }
+
+    &-video {
+        width: 100%;
+        max-height: 840px;
+        z-index: -1;
+
+        @media (max-width: 1024px) {
+            min-height: 428px;
+        }
+    }
+
+    &-container {
+        top: 103px;
+        left: 80px;
+        right: 80px;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        @media (max-width: 767px) {
+            z-index: 2;
+            right: 24px;
+            left: unset;
+            top: 80px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(9, 9, 9, 0.20) 0%, #090909 100%);
+        }
+
+        &-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.20);
+
+            @media (max-width: 767px) {
+                width: 857px;
+            }
+        }
+
+        &-video {
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                opacity: .6;
+                background: linear-gradient(180deg, #090909 0%, rgba(9, 9, 9, 0.50) 11.97%, rgba(9, 9, 9, 0.25) 58.27%, #090909 75%), #090909;
+            }
+
+            @media (min-width: 768px) {
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -30px;
+                    height: 2px;
+                    width: 100%;
+                    display: block;
+                    z-index: 2;
+                    background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 35.89%);
+                }
+            }
+        }
+
+        &-buttons {
+            max-width: 250px;
+            gap: 8px;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media (max-width: 767px) {
+                flex-direction: column-reverse;
+            }
+
+            .btn {
+                width: 121px;
+
+                @media (max-width: 767px) {
+                    width: 262px;
+                }
+            }
+        }
+
+        &-mobile {
+            z-index: 2;
+            top: -50px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -65px;
+                height: 2px;
+                width: 100%;
+                display: block;
+                z-index: 2;
+                background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 35.89%);
+            }
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    &-wrapper {
+        background: radial-gradient(100% 100% at 50% 100%, #090909 49.66%, rgba(9, 9, 9, 0.20) 100%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: 2;
+        border-radius: 16px;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+
+        &-content {
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &-text {
+        line-height: 20px;
+        max-width: 570px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+
+        @media (min-width: 768px) {
+            max-width: 500px;
+            line-height: 24px;
+        }
+    }
+
+    @media (max-width: 1439px) {
+        &-title {
+            @include font(35);
+        }
+
+        &-subtitle {
+            @include font(40);
+        }
+
+        &-text {
+            @include font(14);
+        }
+    }
+}
+
+
