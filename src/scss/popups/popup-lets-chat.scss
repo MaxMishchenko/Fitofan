@@ -1,5 +1,5 @@
 .popup {
-    display: none; /* Початково попап прихований */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,9 +12,9 @@
     z-index: 1000;
 
     &__content {
-        max-width: 90%; /* Адаптивна ширина */
-        max-height: 100%; /* Адаптивна висота */
-        overflow: auto; /* Скролл у разі переповнення */
+        max-width: 90%;
+        max-height: 100%;
+        overflow: auto;
         border-radius: 24px;
         padding: 24px;
         border: 1px solid rgba(255, 255, 255, 0.10);

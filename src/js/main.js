@@ -9,16 +9,25 @@ $(document).ready(function () {
 
     checkTopBtnPosition();
 
+    lazyLoadBackground();
+
     /** Burger **/
     burgerBTN.add(mobileMenuLink).on('click', mobileMenuToggle);
 
     /** Smooth anchors scroll **/
-    $('a[href*=\\#]:not([href=\\#])').click(function () {
-        if (($(this).attr('href').substr(1)) != null) {
-            $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - 80}, 1200);
-        }
+    $('a[href*="#"]:not([href="#"])').click(function (e) {
+        e.preventDefault();
 
-        return false;
+        let target = $(this).attr('href');
+        let targetOffset = $(target).offset()?.top;
+
+        if (targetOffset !== undefined) {
+            let currentPosition = $(window).scrollTop();
+            let distance = Math.abs(targetOffset - currentPosition);
+            let speed = Math.max(600, Math.min(distance * 0.5, 3000));
+
+            $('html, body').animate({ scrollTop: targetOffset - 80 }, speed, 'swing');
+        }
     });
 
     /** Scroll to top **/
@@ -90,6 +99,8 @@ $(document).ready(function () {
     });
 
     /** Scroll Events **/
+    $(window).on('scroll resize', lazyLoadBackground);
+
     let scrollTimer;
 
     $(window).on('scroll', function () {
@@ -139,6 +150,22 @@ function checkTopBtnPosition() {
     } else {
         scrollTopButton.removeClass('visible');
     }
+}
+
+function lazyLoadBackground() {
+    $('.lazy-bg').each(function () {
+        let $this = $(this);
+        if ($this.is(':visible') && $this.offset().top < $(window).scrollTop() + $(window).height()) {
+            let bg = $this.data('bg');
+            if (bg) {
+                $this.css({
+                    'background-image': `url(${bg})`,
+                    'opacity': 0
+                }).animate({ opacity: 1 }, 400);
+                $this.removeClass("lazy-bg");
+            }
+        }
+    });
 }
 
 

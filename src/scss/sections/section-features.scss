@@ -339,13 +339,27 @@
             max-width: 255px;
         }
 
+
+
         &:nth-of-type(2) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_classes.svg');
         }
 
+        /*&:nth-of-type(2) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_classes.webp');
+        }*/
+
+
+
         &:nth-of-type(3) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_schedule.svg');
         }
+
+        /*&:nth-of-type(3) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_schedule.webp');
+        }*/
+
+
 
         &:nth-of-type(4) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_attendance.svg');
@@ -355,6 +369,12 @@
             max-width: 285px;
         }
 
+        /*&:nth-of-type(4) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_attendance.webp');
+        }*/
+
+
+
         &:nth-of-type(5) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_packages.svg');
         }
@@ -363,9 +383,21 @@
             max-width: 295px;
         }
 
+        /*&:nth-of-type(5) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_packages.webp');
+        }*/
+
+
+
         &:nth-of-type(6) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_finance.svg');
         }
+
+        /*&:nth-of-type(6) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_finance.webp');
+        }*/
+
+
 
         &:nth-of-type(7) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_marketplace.svg');
@@ -375,9 +407,21 @@
             max-width: 260px;
         }
 
+        /*&:nth-of-type(7) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_marketplace.webp');
+        }*/
+
+
+
         &:nth-of-type(8) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_texter.svg');
         }
+
+        /*&:nth-of-type(8) .section__features-item-media {
+            background-image: url('../img/sections/section-features/animation_texter.webp');
+        }*/
+
+
 
         &-head {
             border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -405,6 +449,10 @@
 
         &-media {
             width: 100%;
+            height: 215px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         &-wrapper {
