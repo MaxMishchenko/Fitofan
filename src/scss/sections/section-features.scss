@@ -1,10 +1,6 @@
 .section__features {
     padding-top: 50px;
 
-    @media (min-width: 1024px) {
-        padding-top: 80px;
-    }
-
     &-title {
         &-mobile {
             @media (min-width: 1024px) {
@@ -312,7 +308,7 @@
         max-width: 275px;
 
         @media (min-width: 1024px) {
-            max-width: 100%;
+            max-width: 1440px;
             text-align: left;
             padding-left: 80px;
             padding-right: 80px;
@@ -335,9 +331,9 @@
             background-image: url('../img/sections/section-features/gradient_members.svg');
         }
 
-        &:nth-of-type(1) .section__features-item-text {
+        /*&:nth-of-type(1) .section__features-item-text {
             max-width: 255px;
-        }
+        }*/
 
 
 
@@ -345,19 +341,11 @@
             background-image: url('../img/sections/section-features/gradient_classes.svg');
         }
 
-        /*&:nth-of-type(2) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_classes.webp');
-        }*/
-
 
 
         &:nth-of-type(3) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_schedule.svg');
         }
-
-        /*&:nth-of-type(3) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_schedule.webp');
-        }*/
 
 
 
@@ -365,12 +353,8 @@
             background-image: url('../img/sections/section-features/gradient_attendance.svg');
         }
 
-        &:nth-of-type(4) .section__features-item-text {
+        /*&:nth-of-type(4) .section__features-item-text {
             max-width: 285px;
-        }
-
-        /*&:nth-of-type(4) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_attendance.webp');
         }*/
 
 
@@ -379,12 +363,8 @@
             background-image: url('../img/sections/section-features/gradient_packages.svg');
         }
 
-        &:nth-of-type(5) .section__features-item-text {
+        /*&:nth-of-type(5) .section__features-item-text {
             max-width: 295px;
-        }
-
-        /*&:nth-of-type(5) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_packages.webp');
         }*/
 
 
@@ -393,22 +373,13 @@
             background-image: url('../img/sections/section-features/gradient_finance.svg');
         }
 
-        /*&:nth-of-type(6) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_finance.webp');
-        }*/
-
-
 
         &:nth-of-type(7) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_marketplace.svg');
         }
 
-        &:nth-of-type(7) .section__features-item-text {
+        /*&:nth-of-type(7) .section__features-item-text {
             max-width: 260px;
-        }
-
-        /*&:nth-of-type(7) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_marketplace.webp');
         }*/
 
 
@@ -416,11 +387,6 @@
         &:nth-of-type(8) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_texter.svg');
         }
-
-        /*&:nth-of-type(8) .section__features-item-media {
-            background-image: url('../img/sections/section-features/animation_texter.webp');
-        }*/
-
 
 
         &-head {
@@ -449,7 +415,7 @@
 
         &-media {
             width: 100%;
-            height: 215px;
+            height: 54vw;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -457,6 +423,12 @@
 
         &-wrapper {
             z-index: 1;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &-cards {
+            display: none;
         }
     }
 }

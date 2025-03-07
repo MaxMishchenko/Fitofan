@@ -1,6 +1,11 @@
 .footer {
     max-width: 1440px;
     margin: 0 auto;
+    padding-top: 180px;
+
+    @media (min-width: 1024px) {
+        padding-top: 120px;
+    }
 
     &__info {
         @media (min-width: 1024px) {

@@ -9,6 +9,10 @@
         align-items: normal;
     }
 
+    &--align-end {
+        align-items: flex-end;
+    }
+
     &--align-baseline {
         align-items: baseline;
     }
@@ -139,6 +143,10 @@
     &r {
         &--10 {
             margin-right: 10px;
+        }
+
+        &--25 {
+            margin-right: 25px;
         }
 
         &--30 {
