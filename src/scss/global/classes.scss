@@ -36,6 +36,14 @@
     &--no-shrink {
         flex-shrink: 0;
     }
+
+    &--auto {
+        flex: 0 0 auto;
+    }
+
+    &--grow {
+        flex: 1;
+    }
 }
 
 .p {
@@ -137,6 +145,14 @@
     &l {
         &--10 {
             margin-left: 10px;
+        }
+
+        &--15 {
+            margin-left: 15px;
+        }
+
+        &--25 {
+            margin-left: 25px;
         }
     }
 
@@ -318,6 +334,10 @@
 
     &--light-gray {
         color: var(--color--light-gray);
+    }
+
+    &--subtext {
+        color: var(--color--subtext);
     }
 }
 

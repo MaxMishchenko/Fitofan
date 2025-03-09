@@ -98,6 +98,11 @@ $(document).ready(function () {
         $(this).removeClass('visible');
     });
 
+    /** Attendance Cards **/
+    $('.attendance-card--js').click(function () {
+       $(this).toggleClass('checked');
+    });
+
     /** Scroll Events **/
     $(window).on('scroll resize', lazyLoadBackground);
 

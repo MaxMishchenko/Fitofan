@@ -1,6 +1,11 @@
 .section__features {
     padding-top: 50px;
 
+    @media (min-width: 1024px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &-title {
         &-mobile {
             @media (min-width: 1024px) {
@@ -310,10 +315,13 @@
         @media (min-width: 1024px) {
             max-width: 1440px;
             text-align: left;
-            padding-left: 80px;
-            padding-right: 80px;
 
             @include font(32);
+        }
+
+        @media (min-width: 1440px) {
+            padding-left: 80px;
+            padding-right: 80px;
         }
     }
 
