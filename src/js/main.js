@@ -51,6 +51,16 @@ $(document).ready(function () {
         }
     });
 
+    /** Shake Animation**/
+    setInterval(function () {
+        let chatIcon = $('#floating-chat');
+        chatIcon.addClass('shake');
+
+        setTimeout(function () {
+            chatIcon.removeClass('shake');
+        }, 500);
+    }, 4000);
+
     /** Lazy Video **/
     var lazyVideos = $('video.lazy');
 
