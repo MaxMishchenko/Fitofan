@@ -9,6 +9,7 @@
 
 body {
     background-color: var(--color--surface-dark);
+    overflow-x: hidden;
 
     &.lock {
         overflow: hidden;

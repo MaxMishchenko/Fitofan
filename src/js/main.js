@@ -15,18 +15,19 @@ $(document).ready(function () {
     burgerBTN.add(mobileMenuLink).on('click', mobileMenuToggle);
 
     /** Smooth anchors scroll **/
-    $('a[href*="#"]:not([href="#"])').click(function (e) {
-        e.preventDefault();
+    $("a[href^='#']").on("click", function (event) {
+        event.preventDefault();
 
-        let target = $(this).attr('href');
-        let targetOffset = $(target).offset()?.top;
+        let targetId = $(this).attr("href").substring(1);
+        let targetElement = $("[data-id='" + targetId + "']").filter(":visible");
 
-        if (targetOffset !== undefined) {
-            let currentPosition = $(window).scrollTop();
-            let distance = Math.abs(targetOffset - currentPosition);
-            let speed = Math.max(600, Math.min(distance * 0.5, 3000));
-
-            $('html, body').animate({ scrollTop: targetOffset - 80 }, speed, 'swing');
+        if (targetElement.length) {
+            $("html, body").animate(
+                {
+                    scrollTop: targetElement.offset().top - 100
+                },
+                800
+            );
         }
     });
 
