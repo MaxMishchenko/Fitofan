@@ -168,8 +168,26 @@
                 left: 50%;
                 transform: translateX(-50%);
                 top: 12px;
-                box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .30), 0px 1px 3px 1px rgba(0, 0, 0, .15);
                 border-radius: 50%;
+
+                &-bg {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-radius: 50%;
+                        background-image: url(../img/sections/section-explore/members/gradient_avatar_card_student_2.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        width: 86px;
+                        height: 86px;
+                        z-index: 1;
+                    }
+                }
             }
 
             &:nth-child(1) {
@@ -189,7 +207,11 @@
                 }
 
                 .section__explore-card-small-student {
-                    top: 5px;
+                    top: 16px;
+                }
+
+                .section__explore-card-small-wrapper {
+                    padding-top: 22px;
                 }
             }
 

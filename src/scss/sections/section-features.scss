@@ -428,6 +428,20 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+
+            &-mobile {
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+            }
+
+            &-desktop {
+                display: none;
+
+                @media (min-width: 1024px) {
+                    display: flex;
+                }
+            }
         }
 
         &-wrapper {

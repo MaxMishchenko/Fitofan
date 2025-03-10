@@ -12,6 +12,12 @@
         justify-content: space-between;
     }
 
+    &__wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
     &.float {
         background: rgba(255, 255, 255, .02);
         backdrop-filter: blur(150px);
