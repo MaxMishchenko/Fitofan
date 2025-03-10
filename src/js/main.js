@@ -22,12 +22,7 @@ $(document).ready(function () {
         let targetElement = $("[data-id='" + targetId + "']").filter(":visible");
 
         if (targetElement.length) {
-            $("html, body").animate(
-                {
-                    scrollTop: targetElement.offset().top - 100
-                },
-                800
-            );
+            $("html, body").scrollTop(targetElement.offset().top - 100);
         }
     });
 
@@ -35,7 +30,7 @@ $(document).ready(function () {
     $('#scroll-top').on('click', function (e) {
         e.preventDefault();
 
-        $('html, body').animate({scrollTop: 0}, 700);
+        $('html, body').scrollTop(0);
     });
 
     /**Header app button **/
