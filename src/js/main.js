@@ -41,7 +41,7 @@ $(document).ready(function () {
         $('.header__menu-btn-container').toggleClass('active');
         $('.header__menu-btn-img').toggleClass('active');
     });
-    
+
     $(document).click(function (e) {
         if (!$('#header-app-btn').is(e.target) && $('#header-app-btn').has(e.target).length === 0 &&
             !$('.header__menu-btn-container').is(e.target) && $('.header__menu-btn-container').has(e.target).length === 0) {
@@ -54,15 +54,18 @@ $(document).ready(function () {
     /** Shake Animation**/
     setInterval(function () {
         let chatIcon = $('#floating-chat');
-        chatIcon.addClass('shake');
 
-        setTimeout(function () {
-            chatIcon.removeClass('shake');
-        }, 500);
+        if (!chatIcon.is(':hover')) {
+            chatIcon.addClass('shake');
+
+            setTimeout(function () {
+                chatIcon.removeClass('shake');
+            }, 500);
+        }
     }, 4000);
 
     /** Lazy Video **/
-    var lazyVideos = $('video.lazy');
+    /*var lazyVideos = $('video.lazy');
 
     if ('IntersectionObserver' in window) {
         var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
@@ -97,7 +100,7 @@ $(document).ready(function () {
         lazyVideos.each(function () {
             lazyVideoObserver.observe(this);
         });
-    }
+    }*/
 
     /** Scroll TOP **/
     $('#scroll-top').on('click', function () {
@@ -108,6 +111,93 @@ $(document).ready(function () {
     $('.attendance-card--js').click(function () {
        $(this).toggleClass('checked');
     });
+
+    /** Blobs Animation **/
+    const MIN_SPEED = 0.8;
+    const MAX_SPEED = 2.4;
+
+    let COLORS = [
+        { color: '#BC4E1F', size: "18vw" },
+        { color: '#115266', size: "20vw" },
+        { color: '#AC37C2', size: "19vw" },
+        { color: '#925A18', size: "35vw" },
+        { color: '#193C37', size: "26vw" },
+        { color: '#420B3E', size: "14vw" },
+        { color: '#0B7871', size: "30vw" },
+        { color: '#962213', size: "27vw" },
+        { color: '#115266', size: "24vw" }
+    ];
+
+    if (window.innerWidth < 1024) {
+        COLORS = COLORS.map(blob => ({
+            color: blob.color,
+            size: (parseFloat(blob.size) / 2) + "vw"
+        }));
+    }
+
+    class Blob {
+        constructor($container, config) {
+            this.$el = $('<div>').addClass('blob').appendTo($container);
+            this.size = config.size;
+            this.color = config.color;
+            this.initialX = randomNumber(0, $container.width() - parseFloat(this.size));
+            this.initialY = randomNumber(0, $container.height() - parseFloat(this.size));
+
+            this.$el.css({
+                position: "absolute",
+                width: this.size,
+                height: this.size,
+                borderRadius: "50%",
+                background: this.color,
+                top: `${this.initialY}px`,
+                left: `${this.initialX}px`,
+                opacity: 0.7,
+                zIndex: config.zIndex || 1
+            });
+
+            this.vx = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+            this.vy = randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1);
+            this.x = this.initialX;
+            this.y = this.initialY;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x >= this.$el.parent().width() - parseFloat(this.size) || this.x <= 0) {
+                this.vx *= -1;
+            }
+            if (this.y >= this.$el.parent().height() - parseFloat(this.size) || this.y <= 0) {
+                this.vy *= -1;
+            }
+        }
+
+        move() {
+            this.$el.css("transform", `translate(${this.x - this.initialX}px, ${this.y - this.initialY}px)`);
+        }
+    }
+
+    function initBlobs() {
+        const $container = $('#animated-bg');
+        const blobs = COLORS.map(config => new Blob($container, config));
+
+        function update() {
+            requestAnimationFrame(update);
+            blobs.forEach(blob => {
+                blob.update();
+                blob.move();
+            });
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    function randomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    initBlobs();
 
     /** Scroll Events **/
     $(window).on('scroll resize', lazyLoadBackground);
@@ -276,4 +366,3 @@ function openPopup() {
 
     document.head.appendChild(script);
 }*/
-

@@ -11,10 +11,12 @@
     transition: .4s;
     z-index: 990;
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: #3A3A3A;
+    @media (min-width: 1024px) {
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #3A3A3A;
+        }
     }
 
     &.visible {

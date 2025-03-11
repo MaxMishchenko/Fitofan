@@ -143,4 +143,35 @@
             }
         }
     }
+
+    &__chat {
+        &-icon {
+            transition: opacity .4s ease-in-out;
+        }
+
+        &-btn {
+            &:after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                background: url('../img/icons/icon_chat_hover.svg') no-repeat center / cover;
+                top: calc(50% + 3px);
+                left: 0;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity .4s ease-in-out;
+            }
+
+            &:hover {
+                .header__chat-icon {
+                    opacity: 0;
+                }
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }

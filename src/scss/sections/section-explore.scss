@@ -6,19 +6,19 @@
     }
 
     &-container {
-        max-width: 1280px;
+        max-width: 940px;
         margin-left: auto;
         margin-right: auto;
     }
 
     &-offset {
-        margin-bottom: 11.5vw;
+        margin-bottom: 256px;
     }
 
     &-group {
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         padding-left: 16px;
         padding-right: 16px;
 
@@ -36,12 +36,18 @@
             }
 
             .section__explore-container {
+                &:nth-child(1) {
+                    .section__explore-card-interactive {
+                        min-width: 313px;
+                        max-width: 313px;
+                    }
+                }
+            }
+
+            .section__explore-container {
                 &:nth-child(2) {
                     .section__explore-card-interactive {
                         padding: 48px 23px 48px 16px;
-                        min-width: 285px;
-                        width: 100%;
-                        max-width: 285px;
                     }
                 }
             }
@@ -63,9 +69,8 @@
             .section__explore-container {
                 &:nth-child(2) {
                     .section__explore-card-interactive {
-                        min-width: 347px;
-                        width: 100%;
-                        max-width: 347px;
+                        min-width: 328px;
+                        max-width: 328px;
                     }
                 }
             }
@@ -105,9 +110,9 @@
         background-size: cover;
         padding: 48px 48px 0;
         border-radius: 24px;
-        border: 2px solid #332f2f;
         max-width: calc(64.723vw - 24px);
         width: 100%;
+        max-height: 600px;
 
         &:after {
             content: '';
@@ -150,6 +155,7 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 height: 100%;
+                border-radius: 8px 8px 0 0;
             }
 
             &:after {
@@ -250,9 +256,20 @@
             background-repeat: no-repeat;
             background-position: top;
             border-radius: 16px 16px 0 0;
-            border: 2px solid rgba(255, 255, 255, .2);
-            border-bottom: 0;
-            max-height: 600px;
+            max-height: 388px;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: 0;
+                background: linear-gradient(#FFFFFF33, #FFFFFF00);
+                z-index: -1;
+                border-radius: 16px 16px 0 0;
+            }
         }
 
         &-interactive {
@@ -269,9 +286,7 @@
 
             &-packages {
                 padding: 24px;
-                min-width: 304px;
-                max-width: 304px;
-                width: 100%;
+                max-width: 340px;
             }
 
             &-schedule {
@@ -280,22 +295,16 @@
 
             &-finance {
                 padding: 48px 0;
-                min-width: 305px;
-                max-width: 305px;
-                width: 100%;
+                max-width: 328px;
             }
 
             &-marketplace {
-                min-width: 350px;
-                max-width: 350px;
-                width: 100%;
+                max-width: 338px;
+                min-width: 338px;
                 overflow: hidden;
             }
 
             &-texter {
-                min-width: 288px;
-                max-width: 288px;
-                width: 100%;
                 padding: 48px 25px 48px 24px;
             }
         }
@@ -872,9 +881,11 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top right;
-            width: 390px;
-            height: 590px;
-            top: 0;
+            max-width: 390px;
+            max-height: 590px;
+            width: 375px;
+            height: 55.5vw;
+            top: -20px;
             left: 0;
         }
     }

@@ -36,6 +36,24 @@
         width: 100%;
         max-height: 840px;
         z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        background-color: #090909;
+        height: 55vw;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(140px);
+            pointer-events: none;
+        }
 
         @media (max-width: 1024px) {
             min-height: 428px;
@@ -101,6 +119,9 @@
                     display: block;
                     z-index: 2;
                     background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.00) 35.89%);
+                    max-width: 1440px;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
             }
         }

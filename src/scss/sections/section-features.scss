@@ -340,6 +340,10 @@
             background-image: url('../img/sections/section-features/gradient_members.svg');
         }
 
+        &:nth-of-type(1) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(255, 122, 48, .4));
+        }
+
         /*&:nth-of-type(1) .section__features-item-text {
             max-width: 255px;
         }*/
@@ -350,16 +354,28 @@
             background-image: url('../img/sections/section-features/gradient_classes.svg');
         }
 
+        &:nth-of-type(2) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(252, 181, 46, .4));
+        }
+
 
 
         &:nth-of-type(3) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_schedule.svg');
         }
 
+        &:nth-of-type(3) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(21, 176, 230, .4));
+        }
+
 
 
         &:nth-of-type(4) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_attendance.svg');
+        }
+
+        &:nth-of-type(4) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(185, 49, 233, .4));
         }
 
         /*&:nth-of-type(4) .section__features-item-text {
@@ -372,6 +388,10 @@
             background-image: url('../img/sections/section-features/gradient_packages.svg');
         }
 
+        &:nth-of-type(5) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(34, 153, 148, .4));
+        }
+
         /*&:nth-of-type(5) .section__features-item-text {
             max-width: 295px;
         }*/
@@ -382,9 +402,17 @@
             background-image: url('../img/sections/section-features/gradient_finance.svg');
         }
 
+        &:nth-of-type(6) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(40, 126, 254, .4));
+        }
+
 
         &:nth-of-type(7) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_marketplace.svg');
+        }
+
+        &:nth-of-type(7) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(236, 67, 67, .4));
         }
 
         /*&:nth-of-type(7) .section__features-item-text {
@@ -395,6 +423,10 @@
 
         &:nth-of-type(8) .section__features-item-head {
             background-image: url('../img/sections/section-features/gradient_texter.svg');
+        }
+
+        &:nth-of-type(8) .section__features-item-icon {
+            filter: drop-shadow(0 0 10px rgba(37, 118, 58, 0.40));
         }
 
 
@@ -418,7 +450,6 @@
         }
 
         &-icon {
-            filter: drop-shadow(0 0 10px rgba(185, 49, 233, .4));
             margin-left: -10px;
         }
 
@@ -446,6 +477,12 @@
 
         &-wrapper {
             z-index: 1;
+
+            /*&:nth-child(1) {
+                .section__features-item-icon {
+                    filter: drop-shadow(0 0 10px rgba(185, 49, 233, .4));
+                }
+            }*/
         }
     }
 
