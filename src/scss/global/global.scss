@@ -107,3 +107,13 @@ video {
     left: 0;
     transform-origin: left top;
 }
+
+.container {
+    position: fixed;
+    max-width: 1440px;
+    width: 100dvw;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 997;
+}

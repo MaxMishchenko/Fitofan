@@ -1,12 +1,10 @@
 .section__explore {
-    overflow-x: hidden;
-
     @media (max-width: 1023px) {
         display: none;
     }
 
     &-container {
-        max-width: 940px;
+        max-width: 976px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -113,6 +111,7 @@
         max-width: calc(64.723vw - 24px);
         width: 100%;
         max-height: 600px;
+        overflow: hidden;
 
         &:after {
             content: '';

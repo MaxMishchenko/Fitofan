@@ -128,13 +128,6 @@ $(document).ready(function () {
         { color: '#115266', size: "24vw" }
     ];
 
-    if (window.innerWidth < 1024) {
-        COLORS = COLORS.map(blob => ({
-            color: blob.color,
-            size: (parseFloat(blob.size) / 2) + "vw"
-        }));
-    }
-
     class Blob {
         constructor($container, config) {
             this.$el = $('<div>').addClass('blob').appendTo($container);
@@ -268,7 +261,6 @@ function lazyLoadBackground() {
         }
     });
 }
-
 
 /*//Calendar
 $('.meet--js').click(function () {

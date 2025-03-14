@@ -263,8 +263,16 @@
             @include font(55);
         }
 
+        &-65 {
+            @include font(65);
+        }
+
         &-70 {
             @include font(70);
+        }
+
+        &-80 {
+            @include font(80);
         }
     }
 }
