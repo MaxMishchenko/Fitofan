@@ -1,12 +1,16 @@
 .popup-chat {
     bottom: 8px;
-    right: 13px;
+    right: 0;
     background-color: transparent;
     z-index: 997;
     transition: transform .4s;
 
-    &:hover {
-        transform: scale(1.1);
+    @media (min-width: 1024px) {
+        right: 13px;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 

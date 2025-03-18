@@ -1,43 +1,10 @@
 .section__main {
-    /*max-height: 785px;
-    min-height: 785px;
-    height: 41vw;*/
-
     @media (max-width: 767px) {
         min-height: 710px;
     }
 
-    /*&:before,
-    &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    !*&:before {
-        top: -30px;
-        box-shadow: 0 10px 50px 32px #090909ff;
-        height: 30px;
-    }*!
-
-    &:after {
-        bottom: -30px;
-        //box-shadow: 0 -120px 16px 16px #090909;
-        height: 120px;
-        transform: translateY(110px);
-
-        @media (max-width: 767px) {
-            transform: translateY(-130px);
-        }
-    }*/
-
     &-video {
         width: 100%;
-        /*max-height: 785px;
-        min-height: 785px;*/
         height: 47.5vw;
         max-height: 785px;
         z-index: -1;
@@ -90,34 +57,10 @@
             }
         }
 
-        /* &:after {
-             content: '';
-             position: absolute;
-             left: 0;
-             right: 0;
-             top: 0;
-             bottom: 0;
-             border-radius: 16px;
-             //background: linear-gradient(180deg, rgba(9, 9, 9, 0.20) 0%, #090909 100%);
-         }
-
-         &:before {
-             content: '';
-             position: absolute;
-             top: -2px;
-             left: -2px;
-             right: -2px;
-             bottom: 0;
-             //background: linear-gradient(#ffffff33, #ffffff00);
-             z-index: -1;
-             border-radius: 16px 16px 0 0;
-         }*/
-
         &-img {
             width: 100%;
             height: auto;
             border-radius: 16px;
-            //border: 2px solid rgba(255, 255, 255, 0.20);
 
             @media (max-width: 767px) {
                 width: 857px;
@@ -209,7 +152,6 @@
     }
 
     &-wrapper {
-        //background: radial-gradient(100% 100% at 50% 100%, #090909 49.66%, rgba(9, 9, 9, 0.20) 100%);
         bottom: 0;
         left: 0;
         right: 0;
@@ -257,5 +199,3 @@
         }
     }
 }
-
-

@@ -109,23 +109,56 @@ $(document).ready(function () {
 
     /** Attendance Cards **/
     $('.attendance-card--js').click(function () {
-       $(this).toggleClass('checked');
+        $(this).toggleClass('checked');
     });
+
+    /*** Slider **/
+    let wrapper = $('.testimonials__testimonial-wrapper');
+    let images = $('.testimonials__slide');
+    let index = 0;
+    let interval = 5000;
+
+    function slideTestimonials() {
+        let first = $('.testimonials__testimonial').first();
+        let second = first.next();
+        let activeSlide = second.attr('data-slide');
+
+        $('[data-dot]').removeClass('active');
+
+        first.animate({marginLeft: '-100%', opacity: 0}, 1000, function () {
+            $(this).remove().css({marginLeft: '0', opacity: 1});
+            wrapper.append($(this));
+            $('[data-dot="' + activeSlide + '"]').addClass('active');
+        });
+
+        second.css({opacity: 0}).animate({opacity: 1}, 1000);
+    }
+
+    setInterval(slideTestimonials, interval);
+
+    function fadeImages() {
+        let nextIndex = (index + 1) % images.length;
+        images.eq(index).removeClass('active');
+        images.eq(nextIndex).addClass('active');
+        index = nextIndex;
+    }
+
+    setInterval(fadeImages, interval);
 
     /** Blobs Animation **/
     const MIN_SPEED = 0.8;
     const MAX_SPEED = 2.4;
 
     let COLORS = [
-        { color: '#BC4E1F', size: "18vw" },
-        { color: '#115266', size: "20vw" },
-        { color: '#AC37C2', size: "19vw" },
-        { color: '#925A18', size: "35vw" },
-        { color: '#193C37', size: "26vw" },
-        { color: '#420B3E', size: "14vw" },
-        { color: '#0B7871', size: "30vw" },
-        { color: '#962213', size: "27vw" },
-        { color: '#115266', size: "24vw" }
+        {color: '#BC4E1F', size: "18vw"},
+        {color: '#115266', size: "20vw"},
+        {color: '#AC37C2', size: "19vw"},
+        {color: '#925A18', size: "35vw"},
+        {color: '#193C37', size: "26vw"},
+        {color: '#420B3E', size: "14vw"},
+        {color: '#0B7871', size: "30vw"},
+        {color: '#962213', size: "27vw"},
+        {color: '#115266', size: "24vw"}
     ];
 
     class Blob {
@@ -255,7 +288,7 @@ function lazyLoadBackground() {
                 $this.css({
                     'background-image': `url(${bg})`,
                     'opacity': 0
-                }).animate({ opacity: 1 }, 400);
+                }).animate({opacity: 1}, 400);
                 $this.removeClass("lazy-bg");
             }
         }

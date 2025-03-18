@@ -1,28 +1,21 @@
-.popup-to-top {
+.popup-demo {
     border-radius: 8px;
     background: #3a3a3a85;
     box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.30);
-    bottom: 141px;
+    bottom: 80px;
     right: 8px;
     padding: 6.5px 8px;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 990;
-    transition: all .4s;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 997;
+    transition: transform .4s;
 
     @media (min-width: 1024px) {
         right: 22px;
 
         &:hover {
-            background-color: #3A3A3A;
             transform: scale(1.1);
+            background-color: #3A3A3A;
         }
-    }
-
-    &.visible {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: auto;
     }
 }
