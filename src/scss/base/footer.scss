@@ -5,6 +5,8 @@
 
     @media (min-width: 1024px) {
         padding-top: 120px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
 
     &__info {
@@ -36,6 +38,7 @@
 
         &__container {
             white-space: nowrap;
+            margin-right: 96px;
 
             &-title {
                 @include font(32);
