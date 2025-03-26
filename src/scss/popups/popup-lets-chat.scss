@@ -273,8 +273,8 @@
 
             &:active,
             &:focus {
-                border-color: var(--color--green);
-                background-color: rgba(255, 255, 255, .10);
+                border-color: var(--color--text);
+                background-color: rgba(255, 255, 255, .04);
             }
         }
 
@@ -295,8 +295,8 @@
 
             &:active,
             &:focus {
-                border-color: var(--color--green);
-                background-color: rgba(255, 255, 255, .10);
+                border-color: var(--color--text);
+                background-color: rgba(255, 255, 255, .04);
             }
 
             @media (min-width: 768px) {
