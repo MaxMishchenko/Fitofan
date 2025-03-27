@@ -1,3 +1,47 @@
 <button type="button" id="floating-chat" class="popup-chat position--fixed">
     <img loading="lazy" width="48" height="48" src="./img/icons/icon_chat.svg" alt="Chat icon">
 </button>
+
+<div id="whatsapp-popup" class="popup-chat__window flex flex--column">
+    <div class="popup-chat__container flex flex--align-center position--relative">
+        <div class="popup-chat__avatar lazy-bg position--relative" data-bg="./img/chat/avatar_support.webp">
+            <span class="popup-chat__status"></span>
+        </div>
+
+        <div class="popup-chat__header flex flex--column">
+            <h2 class="font--size-24 font--normal color--text">Support</h2>
+            <p class="popup-chat__subtitle font--size-16 font--normal color--light-gray">Typically replies within 1 hour</p>
+        </div>
+
+        <img id="whatsapp-close" loading="lazy" width="32" height="32" class="popup-chat__close position--absolute" src="./img/icons/icon_close.svg" alt="Close chat">
+    </div>
+
+    <div class="popup-chat__wrapper">
+        <div>
+            <span class="popup-chat__subtext flex font--size-12 font--medium color--subtext">Customer Assistance Team</span>
+
+            <div class="popup-chat__msg flex">
+                <div id="whatsapp-typing" class="popup-chat__typing flex flex--align-center flex--justify-center">
+                    <span class="popup-chat__typing-dot"></span>
+                    <span class="popup-chat__typing-dot"></span>
+                    <span class="popup-chat__typing-dot"></span>
+                </div>
+
+                <div class="popup-chat__msg-block flex flex--column font--size-14 font--normal color--text">
+                    <span>Hello there! 🤝</span>
+
+                    <div class="popup-chat__msg-time flex flex--align-end">
+                        <span>How can we help?</span>
+                        <span id="whatsapp-timestamp" class="popup-chat__timestamp font--size-12 font--normal"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-chat__field-wrapper position--relative" data-placeholder="Type a message">
+        <textarea id="whatsapp-textarea" maxlength="441" class="popup-chat__field" oninput="this.parentNode.dataset.placeholder = this.value ? '' : 'Type a message'"></textarea>
+
+        <button data-link="https://wa.me/380123456789" type="button" class="popup-chat__link position--absolute"></button>
+    </div>
+</div>

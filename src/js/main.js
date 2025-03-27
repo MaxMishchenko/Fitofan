@@ -59,7 +59,7 @@ $(document).ready(function () {
     setInterval(function () {
         let chatIcon = $('#floating-chat');
 
-        if (!chatIcon.is(':hover')) {
+        if (!chatIcon.is(':hover') && !$('.popup-chat__window').hasClass('active')) {
             chatIcon.addClass('shake');
 
             setTimeout(function () {
@@ -228,6 +228,106 @@ $(document).ready(function () {
     }
 
     initBlobs();
+
+    /** Chat **/
+    $('#floating-chat').on('click', function () {
+        $('#whatsapp-popup').toggleClass('active');
+        $('body').addClass('lock-chat');
+
+        updateTimestamp();
+
+        if ($('#whatsapp-textarea').val().trim() != '') {
+            $('.popup-chat__link').addClass('visible');
+        }
+
+        setTimeout(function () {
+            $('#whatsapp-typing').fadeOut(400);
+        }, 600);
+
+        setTimeout(function () {
+            $('.popup-chat__msg').addClass('visible');
+        }, 1000);
+
+        setTimeout(function () {
+            $('.popup-chat__msg-block').addClass('visible').fadeIn(600);
+
+            playNotificationSound();
+        }, 1900);
+    });
+
+    $('.popup-chat__link').on('click', function (e) {
+        e.preventDefault();
+
+        const textareaVal = $('#whatsapp-textarea').val().trim();
+
+        if (textareaVal != '') {
+            const message = encodeURIComponent(textareaVal);
+            const link = $(this).attr('data-link') + '?text=' + message;
+
+            window.open(link, '_blank');
+
+            $('#whatsapp-textarea').val('').removeAttr('style').trigger('input');
+            $('#whatsapp-popup').removeClass('active');
+            $('.popup-chat__link').removeClass('visible floating');
+            $('body').removeClass('lock-chat');
+        }
+    });
+
+    $('#whatsapp-textarea').on('focus', function () {
+        $('.popup-chat__link').addClass('visible');
+    });
+
+    $('#whatsapp-textarea').on('input', function () {
+        if ($(this).val().trim() === '') {
+            this.style.height = '50px';
+            $('.popup-chat__link').removeClass('visible floating');
+        } else {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+
+            $('.popup-chat__link').addClass('floating visible');
+        }
+    });
+
+    $('#whatsapp-close').on('click', function () {
+        $('#whatsapp-popup').removeClass('active');
+        $('.popup-chat__link').removeClass('visible');
+        $('body').removeClass('lock-chat');
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#whatsapp-popup, #floating-chat').length) {
+            $('#whatsapp-popup').removeClass('active');
+            $('.popup-chat__link').removeClass('visible');
+            $('body').removeClass('lock-chat');
+        }
+    });
+
+    function updateTimestamp() {
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let ampm = hours >= 12 ? 'pm' : 'am';
+
+        hours = hours % 12 || 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+
+        let formattedTime = `${hours}:${minutes} ${ampm}`;
+
+        $('#whatsapp-timestamp').text(formattedTime);
+    }
+
+    function playNotificationSound() {
+        if (!localStorage.getItem('audio')) {
+            let audio = new Audio('./img/chat/sound_incoming_msg.mp3');
+
+            audio.play();
+
+            audio.onended = function() {
+                localStorage.setItem('audio', '1');
+            };
+        }
+    }
 
     /** Calendar **/
     $('.meet--js').click(function () {
@@ -523,6 +623,7 @@ $(document).ready(function () {
     function openPopup() {
         $('#popup').css('display', 'flex');
         $('.popup__calendar').show();
+        $('.popup__calendar-wrapper').css('opacity', 0).show().animate({opacity: 1}, 500);
 
         let link = document.createElement("link");
         link.rel = "stylesheet";
@@ -682,7 +783,9 @@ $(document).ready(function () {
 
     /** Form fields validation and submission **/
     $('#success-close').click(function () {
-        $('#success').removeAttr('style');
+        scrollTimer = setTimeout(function () {
+            $('#success').removeAttr('style');
+        }, 100);
 
         closePopup();
 
