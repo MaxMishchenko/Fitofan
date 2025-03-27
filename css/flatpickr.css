@@ -454,7 +454,7 @@ span.flatpickr-weekday {
     cursor: default;
     font-size: 90%;
     background: transparent;
-    color: #757575;
+    color: #ADADAD;
     line-height: 1;
     margin: 0;
     text-align: center;
@@ -601,7 +601,7 @@ span.flatpickr-weekday {
 
 .flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
     cursor: not-allowed;
-    color: #3f3e3e94;
+    color: #757575;
 }
 
 .flatpickr-day.week.selected {
@@ -879,7 +879,7 @@ span.flatpickr-weekday {
 
 .custom-month-item.disabled {
     pointer-events: none;
-    color: #ffffff73;
+    color: #757575;
     cursor: default;
 }
 
