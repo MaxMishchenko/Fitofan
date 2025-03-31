@@ -9,9 +9,20 @@
         padding-right: 80px;
     }
 
+    @media (min-width: 768px) {
+        &__wrapper {
+            padding-right: 48px;
+        }
+
+        &__info {
+            padding-right: 48px;
+        }
+    }
+
     &__info {
         @media (min-width: 1024px) {
             display: none;
+            padding-right: 0;
         }
 
         &-desktop {
@@ -24,6 +35,7 @@
                 &-links {
                     flex-grow: 1;
                     max-width: 600px;
+                    justify-content: space-between;
                 }
             }
         }
@@ -34,6 +46,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            padding-right: 0;
         }
 
         &__container {
@@ -83,6 +96,10 @@
                 @media (min-width: 1024px) {
                     &:first-child {
                         margin-right: 160px;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
                     }
                 }
 

@@ -9,6 +9,8 @@ $(document).ready(function () {
 
     checkTopBtnPosition();
 
+    checkDemoBtnPosition();
+
     lazyLoadBackground();
 
     localStorage.clear();
@@ -25,8 +27,24 @@ $(document).ready(function () {
         let targetId = $(this).attr("href").substring(1);
         let targetElement = $("[data-id='" + targetId + "']").filter(":visible");
 
+        let centerIds = [
+            'members', 'classes', 'schedule', 'attendance',
+            'packages', 'finance', 'marketplace', 'texter'
+        ];
+
         if (targetElement.length) {
-            $("html, body").scrollTop(targetElement.offset().top - 100);
+            let targetOffset = targetElement.offset().top;
+            let scrollTo;
+
+            if (centerIds.includes(targetId)) {
+                let windowHeight = $(window).height();
+                let elementHeight = targetElement.outerHeight();
+                scrollTo = targetOffset - (windowHeight / 2) + (elementHeight / 2) - 42;
+            } else {
+                scrollTo = targetOffset - 100;
+            }
+
+            $("html, body").scrollTop(scrollTo);
         }
     });
 
@@ -986,10 +1004,13 @@ $(document).ready(function () {
         checkHeaderPosition();
 
         $('#scroll-top').removeClass('visible');
+        $('.popup-demo__text').removeClass('visible');
         clearTimeout(scrollTimer);
 
         scrollTimer = setTimeout(function () {
             checkTopBtnPosition();
+
+            checkDemoBtnPosition();
         }, 200);
     });
 });
@@ -1028,6 +1049,39 @@ function checkTopBtnPosition() {
         scrollTopButton.addClass('visible');
     } else {
         scrollTopButton.removeClass('visible');
+    }
+}
+
+function checkDemoBtnPosition() {
+    let footer = $('.section__explore');
+    let footerBottom = $('.footer');
+    let scrollDemoButton = $('.popup-demo__text');
+    let windowHeight = $(window).height();
+    let footerOffset = footer.offset().top;
+    let scrollPosition = $(window).scrollTop();
+    let buttonRect = scrollDemoButton[0].getBoundingClientRect();
+    let footerRect = footerBottom[0].getBoundingClientRect();
+
+    clearTimeout(scrollDemoButton.data('timeout'));
+
+    let isOverlappingFooter =
+        buttonRect.bottom > footerRect.top && buttonRect.top < footerRect.bottom;
+
+    if (isOverlappingFooter) {
+        scrollDemoButton.removeClass('visible');
+        return;
+    }
+
+    if (scrollPosition + windowHeight >= footerOffset) {
+        let timeout = setTimeout(() => {
+            if (!isOverlappingFooter) {
+                scrollDemoButton.addClass('visible');
+            }
+        }, 500);
+
+        scrollDemoButton.data('timeout', timeout);
+    } else {
+        scrollDemoButton.removeClass('visible');
     }
 }
 
